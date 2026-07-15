@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(pinoHttp({ logger }));
 
 app.use('/api/auth', authRoutes);
-app.use('/api/gift', giftRoutes);
+app.use('/api/gifts', giftRoutes);
 app.use('/api/search', searchRoutes);
 
 app.get('/api/health', (req, res) => {
