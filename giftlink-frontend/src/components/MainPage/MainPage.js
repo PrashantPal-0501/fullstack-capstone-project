@@ -26,7 +26,7 @@ function MainPage() {
   useEffect(() => {
     const fetchGifts = async () => {
       try {
-        const response = await fetch(`${config.apiUrl}/api/gift`);
+       const response = await fetch(`${config.apiUrl}/api/gifts`);
         if (!response.ok) {
           throw new Error('Unable to load gifts right now');
         }

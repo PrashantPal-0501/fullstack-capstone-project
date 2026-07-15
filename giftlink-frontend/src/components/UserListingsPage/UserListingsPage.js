@@ -27,7 +27,7 @@ function UserListingsPage() {
 
   const fetchMyListings = async () => {
     try {
-      const response = await fetch(`${config.apiUrl}/api/gift`);
+      const response = await fetch(`${config.apiUrl}/api/gifts`);
       const data = await response.json();
       setListings(data.filter(g => g.owner_id === user?.id));
     } catch (err) {
@@ -56,7 +56,7 @@ function UserListingsPage() {
     setSubmitting(true);
 
     try {
-      const response = await fetch(`${config.apiUrl}/api/gift`, {
+      const response = await fetch(`${config.apiUrl}/api/gifts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ function UserListingsPage() {
 
   const handleDelete = async giftId => {
     try {
-      const response = await fetch(`${config.apiUrl}/api/gift/${giftId}`, {
+      const response = await fetch(`${config.apiUrl}/api/gifts/${giftId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${authToken}` }
       });

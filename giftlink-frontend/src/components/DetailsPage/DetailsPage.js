@@ -18,7 +18,7 @@ function DetailsPage() {
 
   const fetchGift = async () => {
     try {
-      const response = await fetch(`${config.apiUrl}/api/gift/${id}`);
+      const response = await fetch(`${config.apiUrl}/api/gifts/${id}`);
       if (!response.ok) {
         throw new Error('This gift listing could not be found');
       }
@@ -44,7 +44,7 @@ function DetailsPage() {
 
     setPosting(true);
     try {
-      const response = await fetch(`${config.apiUrl}/api/gift/${id}/comments`, {
+      const response = await fetch(`${config.apiUrl}/api/gifts/${id}/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
